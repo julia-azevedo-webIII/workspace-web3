@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Estudante</title>
+</head>
+<body>
+
+<form enctype="multipart/form-data" th:action="@{/estudante}" method="post" th:object="${estudante}">
+
+    <div th:if="${#fields.hasErrors()}">
+        <ul>
+            <li th:each="erro : ${#fields.errors()}">
+                <span th:text="${erro}"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <input type="text" th:field="*{nome}" placeholder="Nome">
+        <div th:if="${#fields.hasErrors('nome')}">
+            <span th:errors="*{nome}"></span>
+        </div>
+    </div>
+
+    <div>
+        <input type="text" th:field="*{matricula}" placeholder="Matrícula">
+        <div th:if="${#fields.hasErrors('matricula')}">
+            <span th:errors="*{matricula}"></span>
+        </div>
+    </div>
+
+    <div>
+        <input type="date" th:field="*{dataNascimento}">
+    </div>
+
+    <div>
+        <input type="file" th:field="*{avatar}">
+    </div>
+
+    <div>
+        <input type="submit" value="Cadastrar">
+    </div>
+</form>
+
+</body>
+</html>

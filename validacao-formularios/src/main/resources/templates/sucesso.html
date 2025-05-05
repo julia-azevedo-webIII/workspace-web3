@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Sucesso</title>
+</head>
+<body>
+
+<h1>Cadastro realizado com sucesso!</h1>
+<p th:text="${estudante.nome}"></p>
+<p th:text="${estudante.matricula}"></p>
+<p th:text="${estudante.dataNascimento}"></p>
+
+<img th:src="@{'/uploads/' + ${estudante.avatar.originalFilename}}"
+     alt="">
+
+</body>
+</html>

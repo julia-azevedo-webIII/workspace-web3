@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+
+    <h1 th:text="${store}" ></h1>
+
+    <table>
+        <tr>
+        <td>Id</td>
+        <td>Nome</td>
+        <td>Preco</td>
+        </tr>
+        <tr>
+            <tr th:each="product: ${products}">
+                <tr th:text="${product.id}"></tr>
+                <tr th:text="${product.nome}"></tr>
+                <tr th:text="${product.price}"></tr>
+            </tr>
+        </tr>
+    </table>
+
+</body>
+</html>
